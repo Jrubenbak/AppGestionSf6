@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategorieController!{% endblock %}
+
+{% block body %}
+<body>
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-secondary navbar-dark">
+                <a href="index.html" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>Gestion Stock</h3>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                        <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0">JRuben</h6>
+                        <span>Admin</span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Produits</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="{{ path('ajout_produit') }}" class="dropdown-item">Ajouter </a>
+                            <a href="{{ path('lister_produit') }}" class="dropdown-item">Lister</a>²
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Catégories</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="{{ path('ajout_categorie') }}" class="dropdown-item">Ajouter </a>
+                            <a href="{{ path('lister_categorie') }}" class="dropdown-item">Lister</a>²
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Entrées</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="{{ path('ajout_entree') }}" class="dropdown-item">Ajouter </a>
+                            <a href="{{ path('lister_entree') }}" class="dropdown-item">Lister</a>²
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Sorties</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="{{ path('ajout_sortie') }}" class="dropdown-item">Ajouter </a>
+                            <a href="{{ path('lister_sortie') }}" class="dropdown-item">Lister</a>²
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="{{ path('app_login') }}" class="dropdown-item">Sign In</a>
+                            <a href="signup.html" class="dropdown-item">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+        <!-- Form Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Formulaire d'Ajout</h6>
+                            <form method ="post" action="{{path('app_ajoutCategorie')}}">
+                                <div class="mb-3">
+                                    <label for="nom" class="form-label">Nom Catégorie</label>
+                                    <input type="text" class="form-control" id="nomC" name="name"
+                                        aria-describedby="nom">
+                                </div>
+                                <button type="submit" class="btn btn-primary" name="ajouter">Ajouter</button>
+                            </form>
+                        </div>
+                    </div>        
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+{% endblock %}
